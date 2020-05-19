@@ -63,7 +63,7 @@ public class PruebaIO{
           r.writeObject(x);
         }
         r.close();
-      } catch(Exception e) {
+      } catch(IOException e) {
         e.printStackTrace();
       }
   }
