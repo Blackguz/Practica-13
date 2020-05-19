@@ -57,7 +57,7 @@ public class PruebaIO{
     //Aquí va la serialización
     String path2 = System.getProperty("user.home") + System.getProperty("file.separator");
       try {
-        FileOutputStream f = new FileOutputStream(path2+"pvsz.txt");
+        FileOutputStream f = new FileOutputStream(path2+"pvsz.out");
         ObjectOutputStream r = new ObjectOutputStream(f);
         for (Personaje x: personajes ) {
           r.writeObject(x);
