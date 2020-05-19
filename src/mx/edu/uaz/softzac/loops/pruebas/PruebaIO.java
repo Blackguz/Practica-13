@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import mx.edu.uaz.softzac.loops.personajes.*;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class PruebaIO{
   public static void main(String[] args) {
@@ -47,18 +49,22 @@ public class PruebaIO{
                       break;
         }
       }
-      for (Personaje x: personajes ) {
-        System.out.println(x);
-      }
     }catch (FileNotFoundException fnfe) {
       fnfe.printStackTrace();
     }catch (IOException ioe) {
       ioe.printStackTrace();
     }
     //Aquí va la serialización
-    
-    for (Personaje x :personajes ) {
-      BufferedOutputStream
-    }
+    String path2 = System.getProperty("user.home") + System.getProperty("file.separator");
+      try {
+        FileOutputStream f = new FileOutputStream(path2+"pvsz.txt");
+        ObjectOutputStream r = new ObjectOutputStream(f);
+        for (Personaje x: personajes ) {
+          r.writeObject(x);
+        }
+        r.close();
+      } catch(Exception e) {
+        e.printStackTrace();
+      }
   }
 }
